@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 
 class Counter extends React.Component {
 
+    static propTypes = {
+        from: PropTypes.number.isRequired,
+        to: PropTypes.number.isRequired,
+        onSuccess: PropTypes.func
+    }
+
     constructor(props) {
         super();
 
