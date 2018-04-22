@@ -16,7 +16,7 @@ class Counter extends React.Component {
     constructor(props) {
         super();
 
-        this.state = { counter: 0 }
+        this.state = { counter: 0, intervalId: undefined };
 
         this.onComponentClick = this.onComponentClick.bind(this);
     }
@@ -53,7 +53,7 @@ class Counter extends React.Component {
         }
     }
 
-    isRunning = () => this.state.timerID !== undefined;
+    isRunning = () => this.state.intervalId !== undefined;
     isFinished = () => this.state.counter <= this.props.to;
     minutes = () => Math.floor(this.state.counter / 60).toString().padStart(2, "0");
     seconds = () => (this.state.counter % 60).toString().padStart(2, "0");
@@ -63,12 +63,12 @@ class Counter extends React.Component {
             this.setState({ counter: this.props.from });
         }
 
-        this.setState({ timerID: setInterval(() => this.tick(), 1000) });
+        this.setState({ intervalId: setInterval(() => this.tick(), 1000) });
     }
 
     stop() {
-        clearInterval(this.state.timerID);
-        this.setState({ timerID: undefined });
+        clearInterval(this.state.intervalId);
+        this.setState({ intervalId: undefined });
     }
 
 

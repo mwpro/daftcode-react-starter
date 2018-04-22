@@ -6,15 +6,27 @@ import './styles/theme.sass';
 import Counter from './components/Counter';
 
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  sampleFunc() {
-    console.log('Ziemniaki gotowe!');
+  constructor(props) {
+    super();
+
+    this.onTimerFinish = this.onTimerFinish.bind(this);
+  }
+  
+  state = { timerFinished: false }
+
+  onTimerFinish() {
+    this.setState({ timerFinished: true });
   }
 
   render() {
+    const potatoes = this.state.timerFinished ?
+      (<div className="cookingResult">🥔 ➡ 🍽️</div>) : "";
+
     return (
       <main>
         <Home username="DaftCoder" />
-        <Counter from={64} to={54} onSuccess={this.sampleFunc} />
+        <Counter from={64} to={54} onSuccess={this.onTimerFinish} />
+        {potatoes}
       </main>
     );
   }
