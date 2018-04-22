@@ -58,7 +58,11 @@ class Counter extends React.Component {
     render() {
         return (
             <div onClick={this.handleClick}>
-                <h1>{this.state.counter}</h1>
+                <h1>
+                    {Math.floor(this.state.counter / 60).toString().padStart(2, "0")}
+                    :
+                    {(this.state.counter % 60).toString().padStart(2, "0")}
+                </h1>
             </div>
         );
     }

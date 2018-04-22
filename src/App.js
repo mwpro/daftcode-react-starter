@@ -14,7 +14,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
     return (
       <main>
         <Home username="DaftCoder" />
-        <Counter from={15} to={10} onSuccess={this.sampleFunc} />
+        <Counter from={64} to={54} onSuccess={this.sampleFunc} />
       </main>
     );
   }
