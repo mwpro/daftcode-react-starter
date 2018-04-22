@@ -20,5 +20,15 @@ main {
   border-radius: 1rem;
   background: #d7d7d7; }
 
+.cookingResult {
+  font-size: 10rem;
+  text-align: center; }
+
+.counter {
+  background-color: aliceblue;
+  text-align: center;
+  font-size: 15rem;
+  margin: 5rem; }
+
 
 /*# sourceMappingURL=main.css.map*/
