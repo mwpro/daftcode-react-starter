@@ -8,6 +8,7 @@ import rocket from './assets/rocket.json';
 import './styles/theme.sass';
 
 import LaunchDetails from './view/LaunchDetails'
+import Footer from './view/Footer'
 
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -18,6 +19,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
           launchSite={launchSite}
           rocket={rocket}
         />
+        <Footer />
       </main>
     );
   }
