@@ -1,6 +1,6 @@
-# ⚛ daftcode-react-starter
+# 🚀 ❤️ ⚛ SpaceX Launches
 
-React boilerplate for everyone 
+Baset on react boilerplate for everyone 
 
 ## 🕹 Features
 * [React (v16.3)](https://reactjs.org) - a JavaScript library for building user interfaces
