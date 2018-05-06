@@ -5,9 +5,11 @@ class LaunchSite extends React.Component {
         return (
             <div>
                 <h3>Launch Pad</h3>
-                <p>Name: {this.props.launchSite.full_name}</p>
-                <p>Location: {this.props.launchSite.location.name}, {this.props.launchSite.location.region}</p>
-                <p>{this.props.launchSite.details}</p>
+                <ul>
+                    <li><span>Name:</span> {this.props.launchSite.full_name}</li>
+                    <li><span>Location:</span> {this.props.launchSite.location.name}, {this.props.launchSite.location.region}</li>
+                </ul>
+                <p>{this.props.launchSite.details}</p>                
             </div>
         );
     }

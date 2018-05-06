@@ -7,10 +7,11 @@ class LaunchDetails extends React.Component {
     render() {
         return (
             <div class="launchDetails">
-                <div class="header">
-                    <a href="#">Go back</a>
-                    <span>SpaceX logo</span>
-                </div>
+                <header>
+                    <a href="#" class="goback">Go back</a>
+                    <a href="#" class="logo" alt="SpaceX"></a>
+                    
+                </header>
                 <div class="launchDetailsDetails">
                     <div class="basics">
                         <p class="launchDate">{this.props.launch.launch_date_utc}</p>

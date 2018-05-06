@@ -6,6 +6,9 @@ html
   letter-spacing: 1px
   color: $almost-black-color
 
+body
+  margin: 0
+
 h1
   font-size: 36px
   letter-spacing: 1.5px
@@ -20,49 +23,57 @@ main
 
 .launchDetails
 
-//  div
-//    border: black 1px solid
-  //  width: 400px
-
-//  .header
-//    flex-basis: 100%
-
-  //.links
-    //flex-basis: 100%
-
-.launchDetailsDetails
-  display: flex
-  flex-direction: row
-  justify-content: space-around
-  
-  .basics
-    .launchDate
-      color: $cool-grey-color
-
-  div
-    border: black 1px solid
-    flex: 1
-  
-  ul
-    text-transform: uppercase
-    list-style: none
-    padding: 0
+  header
     display: flex
-    flex-wrap: wrap
-    height: 80px
-    flex-direction: column
-  
-  li
-    border-left: 1px dashed $cool-grey-color
-    padding-left: 20px
-    span
-      color: $cool-grey-color
-  
-  h3
-    color: $desert-color
-    text-transform: uppercase
-    letter-spacing: 9px
-    font-size: 14px
-    font-weight: 600
-    border-bottom: $desert-color 2px solid
-    padding-bottom: 20px
+    padding: 20px 50px
+    flex-direction: row
+    background-color: $almost-black-color
+    justify-content: space-between
+    .goback 
+      text-transform: uppercase
+      color: $desert-color
+      align-self: center
+    .logo 
+      flex: 1 0 auto
+      background: url("../assets/space_x_logo_bw_centered.png") no-repeat center
+      background-size: contain
+      height: 40px
+  div
+    border: black 1px solid // that's for debug
+
+  .launchDetailsDetails
+    padding: 75px 50px
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    
+    .basics
+      .launchDate
+        color: $cool-grey-color
+
+    div
+      flex: 1
+    
+    ul
+      text-transform: uppercase
+      list-style: none
+      padding: 0
+      display: flex
+      flex-wrap: wrap
+      flex-direction: row
+    
+    li
+      width: 40%
+      border-left: 1px dashed $cool-grey-color
+      padding-left: 20px
+      span
+        color: $cool-grey-color
+    
+    h3
+      color: $desert-color
+      text-transform: uppercase
+      letter-spacing: 9px
+      font-size: 14px
+      font-weight: 600
+      border-bottom: $desert-color 2px solid
+      padding-bottom: 20px
