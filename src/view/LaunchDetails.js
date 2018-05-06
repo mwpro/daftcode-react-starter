@@ -1,28 +1,40 @@
 import * as React from 'react';
 
+import Rocket from '../components/Rocket';
+import LaunchSite from '../components/LaunchSite'
+
 class LaunchDetails extends React.Component {
     render() {
         return (
-            <div>
-                <a>Go back</a>
-                <h1>SpaceX</h1>
-                <p>{this.props.launch.launch_date_utc}</p>
-                <h2>{this.props.launch.rocket.second_stage.payloads[0].payload_id} launch</h2>
-                <h2>time to start...</h2>
-                <img src={this.props.launch.links.mission_patch_small} />
-                <h3>Details</h3>
-                <p>{this.props.launch.details}</p>
-                <h3>Rocket</h3>
-                <p>Separate component for info about rocket to be used</p>
-                <h3>Launch pad</h3>
-                <p>Separate component for info about launch pad to be used</p>
-                <h3>Mission links</h3>
-                <p><a href={this.props.launch.links.reddit_campaign}>Reddit Campaign</a></p>
-                <p><a href={this.props.launch.links.presskit}>Presskit</a></p>
-                <p><a href={this.props.launch.links.video_link}>Mission video</a></p>
+            <div class="launchDetails">
+                <div class="header">
+                    <a href="#">Go back</a>
+                    <span>SpaceX logo</span>
+                </div>
+                <div class="launchDetailsDetails">
+                    <div class="basics">
+                        <p class="launchDate">{this.props.launch.launch_date_utc}</p>
+                        <h1>{this.props.launch.rocket.second_stage.payloads[0].payload_id} launch</h1>
+                        <p>time to start...</p>
+                        <img src={this.props.launch.links.mission_patch_small} />
+                    </div>
+                    <div class="details">
+                        <div>
+                        <h3>Details</h3>
+                        <p>{this.props.launch.details}</p>
+                        </div>
+                        <Rocket rocket={this.props.rocket} />
+                        <LaunchSite launchSite={this.props.launchSite} />
+                    </div>                    
+                </div>
+                <div class="links">
+                    <h3>Mission links</h3>
+                    <p><a href={this.props.launch.links.reddit_campaign}>Reddit Campaign</a></p>
+                    <p><a href={this.props.launch.links.presskit}>Presskit</a></p>
+                    <p><a href={this.props.launch.links.video_link}>Mission video</a></p>
+                </div>
             </div>
         );
     }
 }
-
 export default LaunchDetails;

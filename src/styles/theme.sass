@@ -1,14 +1,68 @@
 @import "variables"
 
 html
-  font-size: 10px
+  font-size: 14px
+  font-family: $default-font
+  letter-spacing: 1px
+  color: $almost-black-color
+
+h1
+  font-size: 36px
+  letter-spacing: 1.5px
+  font-weight: 600
+  text-transform: uppercase
+
+
 
 body
-  margin: 0
 
 main
-  width: 80%
-  margin: 4rem auto 0
-  padding: 2rem
-  border-radius: 1rem
-  background: $background-color
+
+.launchDetails
+
+//  div
+//    border: black 1px solid
+  //  width: 400px
+
+//  .header
+//    flex-basis: 100%
+
+  //.links
+    //flex-basis: 100%
+
+.launchDetailsDetails
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  
+  .basics
+    .launchDate
+      color: $cool-grey-color
+
+  div
+    border: black 1px solid
+    flex: 1
+  
+  ul
+    text-transform: uppercase
+    list-style: none
+    padding: 0
+    display: flex
+    flex-wrap: wrap
+    height: 80px
+    flex-direction: column
+  
+  li
+    border-left: 1px dashed $cool-grey-color
+    padding-left: 20px
+    span
+      color: $cool-grey-color
+  
+  h3
+    color: $desert-color
+    text-transform: uppercase
+    letter-spacing: 9px
+    font-size: 14px
+    font-weight: 600
+    border-bottom: $desert-color 2px solid
+    padding-bottom: 20px
