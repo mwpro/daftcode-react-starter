@@ -30,9 +30,9 @@ class LaunchDetails extends React.Component {
                 </div>
                 <div class="links">
                     <h3>Mission links</h3>
-                    <p><a href={this.props.launch.links.reddit_campaign}>Reddit Campaign</a></p>
-                    <p><a href={this.props.launch.links.presskit}>Presskit</a></p>
-                    <p><a href={this.props.launch.links.video_link}>Mission video</a></p>
+                    <a href={this.props.launch.links.reddit_campaign}>Reddit Campaign</a>
+                    <a href={this.props.launch.links.presskit}>Presskit</a>
+                    <a href={this.props.launch.links.video_link}>Mission video</a>
                 </div>
             </div>
         );

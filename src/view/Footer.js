@@ -3,10 +3,10 @@ import * as React from 'react';
 class Footer extends React.Component {
     render() {
         return (
-            <div>
-                <p>Follow SpaceX | <a href="#">Twitter</a> <a href="#">Youtube</a> <a href="#">Flickr</a> <a href="#">Instagram</a></p>
-                <p>Copyright</p>
-            </div>
+            <footer>
+                <div class="links">Follow SpaceX | <a href="#">Twitter</a> <a href="#">Youtube</a> <a href="#">Flickr</a> <a href="#">Instagram</a></div>
+                <div class="copyright">2018 Space Exploration Technologies Corp.</div>
+            </footer>
         );
     }
 }

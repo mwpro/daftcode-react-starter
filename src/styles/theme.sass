@@ -15,7 +15,22 @@ h1
   font-weight: 600
   text-transform: uppercase
 
+.header_big 
+  letter-spacing: 1.5
+  font-weight: 600
+  font-size: 36px
 
+.header_sml_semibold
+  letter-spacing: 18px
+  font-weight: 600
+  font-size: 24px
+
+.header_sml
+  font-size: 24px
+
+.basic_exp_semibold
+  letter-spacing: 9px
+  font-weight: 600
 
 body
 
@@ -30,19 +45,23 @@ main
     background-color: $almost-black-color
     justify-content: space-between
     .goback 
+      background: url("../assets/arrow_pointer.png") no-repeat center left
+      padding-left: 15px
+      letter-spacing: 9px
       text-transform: uppercase
       color: $desert-color
       align-self: center
+      text-decoration: none
     .logo 
       flex: 1 0 auto
       background: url("../assets/space_x_logo_bw_centered.png") no-repeat center
       background-size: contain
       height: 40px
   div
-    border: black 1px solid // that's for debug
+    // border: black 1px solid // that's for debug
 
   .launchDetailsDetails
-    padding: 75px 50px
+    padding: 75px 50px 0px 50px
     display: flex
     flex-direction: row
     justify-content: space-around
@@ -53,6 +72,7 @@ main
 
     div
       flex: 1
+      padding-bottom: 50px
     
     ul
       text-transform: uppercase
@@ -68,6 +88,11 @@ main
       padding-left: 20px
       span
         color: $cool-grey-color
+        display: block
+        float: left
+        height: 100%
+        margin-right: 5px
+
     
     h3
       color: $desert-color
@@ -77,3 +102,46 @@ main
       font-weight: 600
       border-bottom: $desert-color 2px solid
       padding-bottom: 20px
+
+  .links
+    background: url("../assets/rocket.png") $brownish-grey-color no-repeat center top
+    background-size: contain
+    height: 500px
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-content: flex-end
+    align-items: flex-end
+    text-align: center
+
+    h3, a
+      color: $white-color
+      text-transform: uppercase
+    
+    h3 
+      @extend .header_sml_semibold
+      align-self: center
+      flex: 2 1 100%
+
+    a
+      text-decoration: none
+      border: 1px $white-color solid
+      border-radius: 20px
+      padding: 5px 30px
+      margin: 30px 10px 70px 10px
+
+footer
+  background-color: $dark-grey-color
+  color: $brownish-grey-color
+  text-transform: uppercase
+  display: flex
+  justify-content: space-between
+  padding: 20px 50px
+
+  .links  
+    a
+      color: $cool-grey-color
+      text-decoration: none      
+      margin: 0 5px
+
+  .copyright
