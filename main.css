@@ -1,34 +1,167 @@
-.welcome {
-  color: #0f0f0f;
-  font-size: 3rem;
-  text-align: center;
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg); }
-  .welcome .username {
-    font-weight: normal; }
-
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
 html {
-  font-size: 10px; }
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  color: #0f1112; }
 
 body {
   margin: 0; }
 
-main {
-  width: 80%;
-  margin: 4rem auto 0;
-  padding: 2rem;
-  border-radius: 1rem;
-  background: #d7d7d7; }
+.header_big, h1 {
+  letter-spacing: 1.5;
+  font-weight: 600;
+  font-size: 36px;
+  text-transform: uppercase; }
 
-.cookingResult {
-  font-size: 10rem;
+.header_sml_semibold, .launchDetails .links h3 {
+  letter-spacing: 18px;
+  font-weight: 600;
+  font-size: 24px; }
+
+.header_sml {
+  font-size: 24px; }
+
+.basic_exp_semibold {
+  letter-spacing: 9px;
+  font-weight: 600; }
+
+.launchDetails header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 50px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #0f1112;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .launchDetails header .goback {
+    background: url(arrow_pointer.png) no-repeat center left;
+    padding-left: 15px;
+    letter-spacing: 9px;
+    text-transform: uppercase;
+    color: #ccac5b;
+    -ms-flex-item-align: center;
+        align-self: center;
+    text-decoration: none; }
+  .launchDetails header .logo {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+    background: url(space_x_logo_bw_centered.png) no-repeat center;
+    background-size: contain;
+    height: 40px; }
+
+.launchDetails .launchDetailsDetails {
+  padding: 75px 50px 0px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  .launchDetails .launchDetailsDetails .basics {
+    text-transform: uppercase; }
+    .launchDetails .launchDetailsDetails .basics .launchDate {
+      color: #a7a9ac;
+      letter-spacing: 9px; }
+    .launchDetails .launchDetailsDetails .basics h1 {
+      margin-bottom: 5px; }
+    .launchDetails .launchDetailsDetails .basics .timeToStart {
+      margin-top: 5px; }
+  .launchDetails .launchDetailsDetails div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding-bottom: 50px; }
+  .launchDetails .launchDetailsDetails ul {
+    text-transform: uppercase;
+    list-style: none;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+  .launchDetails .launchDetailsDetails li {
+    width: 40%;
+    border-left: 1px dashed #a7a9ac;
+    padding-left: 20px; }
+    .launchDetails .launchDetailsDetails li span {
+      color: #a7a9ac;
+      display: block;
+      float: left;
+      height: 100%;
+      margin-right: 5px; }
+  .launchDetails .launchDetailsDetails h3 {
+    color: #ccac5b;
+    text-transform: uppercase;
+    letter-spacing: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: #ccac5b 2px solid;
+    padding-bottom: 20px; }
+
+.launchDetails .links {
+  background: url(rocket.png) #666666 no-repeat center top;
+  background-size: contain;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   text-align: center; }
+  .launchDetails .links h3, .launchDetails .links a {
+    color: #ffffff;
+    text-transform: uppercase; }
+  .launchDetails .links h3 {
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-flex: 2;
+        -ms-flex: 2 1 100%;
+            flex: 2 1 100%; }
+  .launchDetails .links a {
+    text-decoration: none;
+    border: 1px #ffffff solid;
+    border-radius: 20px;
+    padding: 5px 30px;
+    margin: 30px 10px 70px 10px; }
 
-.counter {
-  background-color: aliceblue;
-  text-align: center;
-  font-size: 15rem;
-  margin: 5rem; }
+footer {
+  background-color: #22272b;
+  color: #666666;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 50px; }
+  footer .links a {
+    color: #a7a9ac;
+    text-decoration: none;
+    margin: 0 5px; }
 
 
 /*# sourceMappingURL=main.css.map*/
