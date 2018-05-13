@@ -11,8 +11,8 @@ class LaunchDetails extends React.Component {
         return (
             <div className="launchDetails">
                 <header>
-                    <a href="#" className="goback">Go back</a>
-                    <a href="#" className="logo" alt="SpaceX"></a>                    
+                    <a className="goback" onClick={this.props.onBackClick}>Go back</a>
+                    <a className="logo" onClick={this.props.onBackClick}></a>                    
                 </header>
                 <div className="launchDetailsDetails">
                     <div className="basics">
