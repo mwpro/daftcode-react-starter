@@ -14,7 +14,7 @@ body {
   font-size: 36px;
   text-transform: uppercase; }
 
-.header_sml_semibold, .launchDetails .links h3 {
+.header_sml_semibold, .launchesList header h1, .launchDetails .links h3 {
   letter-spacing: 18px;
   font-weight: 600;
   font-size: 24px; }
@@ -22,9 +22,147 @@ body {
 .header_sml {
   font-size: 24px; }
 
-.basic_exp_semibold {
+.basic_exp_semibold, .launchesList ul li h3 {
   letter-spacing: 9px;
   font-weight: 600; }
+
+.launchesList {
+  background-color: #0f1112;
+  color: #ffffff;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .launchesList header {
+    background: url(moon.png) no-repeat center top;
+    background-size: contain;
+    height: 350px;
+    margin-top: 75px;
+    padding-top: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .launchesList header .logo {
+      height: 75px;
+      margin-left: 5%;
+      width: 100%;
+      display: block;
+      background: url(space_x_logo_bw_centered.png) no-repeat center;
+      background-size: contain; }
+    .launchesList header h1 {
+      color: #a7a9ac; }
+  .launchesList .filters {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 50px 0; }
+    .launchesList .filters button {
+      color: #a7a9ac;
+      font-family: "Open Sans", sans-serif;
+      border: none;
+      background: none;
+      font-size: 14px;
+      margin: 15px;
+      padding: 7px 35px;
+      border: 1px solid #a7a9ac;
+      border-radius: 20px;
+      text-transform: uppercase; }
+      .launchesList .filters button:hover, .launchesList .filters button.active {
+        color: #ffffff;
+        border-color: #ffffff;
+        -webkit-box-shadow: 0px 0px 10px #ffffff inset;
+                box-shadow: 0px 0px 10px #ffffff inset; }
+  .launchesList ul {
+    text-transform: uppercase;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    margin: 0 5% 125px 5%; }
+    .launchesList ul li {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 48%;
+              flex: 0 0 48%;
+      width: 46%;
+      padding-right: 4%;
+      color: #a7a9ac;
+      border-right: 1px dashed #a7a9ac;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+      display: block;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis; }
+      .launchesList ul li:last-child {
+        padding-bottom: 50px; }
+      .launchesList ul li:nth-child(2n) {
+        padding-right: 0;
+        padding-left: 4%;
+        text-align: right;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
+        border-right: none;
+        border-left: 1px dashed #a7a9ac; }
+        .launchesList ul li:nth-child(2n) h3::after {
+          float: left;
+          -webkit-transform: none;
+                  transform: none;
+          margin-left: -7px;
+          margin-top: 27px; }
+        .launchesList ul li:nth-child(2n) p {
+          float: right; }
+      .launchesList ul li h3 {
+        color: #ffffff;
+        border-bottom: 2px solid #ccac5b;
+        padding: 16px 0;
+        margin: 16px 0; }
+        .launchesList ul li h3::after {
+          content: url(arrow_pointer.png);
+          -webkit-transform: rotate(180deg);
+                  transform: rotate(180deg);
+          margin-top: 29px;
+          margin-right: -7px;
+          float: right; }
+        .launchesList ul li h3::before {
+          content: ".";
+          color: #a7a9ac;
+          position: absolute;
+          font-size: 39px;
+          left: 49.7%; }
+      .launchesList ul li p {
+        margin: 0;
+        white-space: nowrap;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        overflow: hidden;
+        width: 80%; }
+        .launchesList ul li p span {
+          color: #ffffff; }
 
 .launchDetails header {
   display: -webkit-box;
