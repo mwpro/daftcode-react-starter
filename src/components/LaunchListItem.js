@@ -7,7 +7,7 @@ class LaunchListItem extends React.Component {
         return (
             <li onClick={this.props.onLaunchClick}>
                 <h3>{format(this.props.launch.launch_date_utc, 'DD MMMM YYYY')}</h3>
-                Rocket: {this.props.launch.rocket.rocket_name} | Launch site: {this.props.launch.launch_site.site_name_long}
+                <p>Rocket: <span>{this.props.launch.rocket.rocket_name}</span> | Launch site: <span>{this.props.launch.launch_site.site_name_long}</span></p>
             </li>
         );
     }

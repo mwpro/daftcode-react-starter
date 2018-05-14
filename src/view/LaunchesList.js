@@ -39,7 +39,7 @@ class LaunchDetails extends React.Component {
                     <h1>Launches 2018</h1>
                 </header>
                 <RocketFilter rockets={this.rocketNames} handleRocketSelect={this.handleRocketSelect} />
-                <ul className="launches">
+                <ul>
                     {this.launches.map((launch) =>
                         <LaunchListItem key={launch.flight_number} launch={launch} onLaunchClick={this.props.onLaunchClick} />
                     )}
