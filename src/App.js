@@ -10,7 +10,6 @@ import './styles/theme.sass';
 import LaunchDetails from './view/LaunchDetails'
 import Footer from './view/Footer'
 
-import launches from './assets/launches.json';
 import LaunchesList from './view/LaunchesList';
 
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -31,7 +30,6 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
       case 'list':
         return (
           <LaunchesList
-            launches={launches}
             onLaunchClick={this.handleLaunchClick}
           />
         );
