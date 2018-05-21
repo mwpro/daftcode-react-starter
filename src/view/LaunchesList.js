@@ -8,7 +8,7 @@ import LaunchSite from '../components/LaunchSite'
 import RocketFilter from "../components/RocketFilter";
 import LaunchListItem from "../components/LaunchListItem";
 
-import { RiseLoader } from 'react-spinners';
+import Loader from "../components/Loader";
 
 class LaunchDetails extends React.Component {
     constructor(props) {
@@ -75,9 +75,8 @@ class LaunchDetails extends React.Component {
                     <a href="#" className="logo" alt="SpaceX"></a>
                     <h1>Launches 2018</h1>
                 </header>
-                <RocketFilter rockets={this.rocketNames} handleRocketSelect={this.handleRocketSelect} />
-                
-                {this.state.loading && <div className="loader"><RiseLoader color={'#ccac5b'} size={20} loading={this.state.loading} /></div>}
+                <RocketFilter rockets={this.rocketNames} handleRocketSelect={this.handleRocketSelect} />                
+                <Loader isLoading={this.state.loading} />
 
                 {this.areLaunchesEmpty && <div className="alert"><h2>🚀<br />Sorry, no launches found</h2></div>}
                 {this.areLaunchesAvailable &&
