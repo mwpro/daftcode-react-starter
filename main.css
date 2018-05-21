@@ -26,6 +26,33 @@ body {
   letter-spacing: 9px;
   font-weight: 600; }
 
+.loaderElement {
+  text-align: center;
+  height: 70px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  color: #ccac5b;
+  background: url(space_x_logo_x_sign.png) no-repeat center top;
+  background-size: contain;
+  -webkit-animation: logo-pulse 3s ease 0s infinite;
+          animation: logo-pulse 3s ease 0s infinite; }
+
+@-webkit-keyframes logo-pulse {
+  0% {
+    opacity: 0.05; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.05; } }
+
+@keyframes logo-pulse {
+  0% {
+    opacity: 0.05; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0.05; } }
+
 .launchesList {
   background-color: #0f1112;
   color: #ffffff;
@@ -93,16 +120,12 @@ body {
         border-color: #ffffff;
         -webkit-box-shadow: 0px 0px 10px #ffffff inset;
                 box-shadow: 0px 0px 10px #ffffff inset; }
-  .launchesList .loader {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 100px; }
   .launchesList .alert {
     text-align: center;
     color: #ccac5b; }
   .launchesList ul {
     text-transform: uppercase;
-    list-style: none;
+    list-style: non;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
