@@ -2,7 +2,6 @@ import { hot } from 'react-hot-loader';
 import * as React from 'react';
 
 import { Provider, observer } from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
 
 import './styles/theme.sass';
 
@@ -41,7 +40,6 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
           {this.activeViewComponent}
         </Provider>
         <Footer />
-        <DevTools />
       </main>
     );
   }
