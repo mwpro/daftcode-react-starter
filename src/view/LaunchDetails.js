@@ -6,13 +6,25 @@ import Rocket from '../components/Rocket';
 import LaunchSite from '../components/LaunchSite'
 import Counter from '../components/Counter'
 
-class LaunchDetails extends React.Component {
+import { action } from 'mobx';
+import { inject } from 'mobx-react';
+
+@inject('mainStore')
+class LaunchDetails extends React.Component {    
+    @action.bound
+    handleGoBack() {
+        const { mainStore } = this.props;
+        mainStore.switchView("list");
+    }
+
     render() {
+        const { mainStore } = this.props;
+        
         return (
             <div className="launchDetails">
                 <header>
-                    <a className="goback" onClick={this.props.onBackClick}>Go back</a>
-                    <a className="logo" onClick={this.props.onBackClick}></a>                    
+                    <a className="goback" onClick={this.handleGoBack}>Go back</a>
+                    <a className="logo" onClick={this.handleGoBack}></a>                    
                 </header>
                 <div className="launchDetailsDetails">
                     <div className="basics">

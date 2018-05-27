@@ -5,33 +5,29 @@ import launch from './assets/launch.json';
 import launchSite from './assets/launch_site.json';
 import rocket from './assets/rocket.json';
 
+import { Provider, observer } from 'mobx-react';
+import DevTools from 'mobx-react-devtools';
+
 import './styles/theme.sass';
 
-import LaunchDetails from './view/LaunchDetails'
-import Footer from './view/Footer'
+import LaunchDetails from './view/LaunchDetails';
+import Footer from './view/Footer';
+
+import MainStore from './stores/MainStore';
 
 import LaunchesList from './view/LaunchesList';
 
+@observer
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);
-    this.state = {
-      viewName: 'list',
-    };
-
-    this.handleLaunchClick = this.handleLaunchClick.bind(this);
-    this.handleBackClick = this.handleBackClick.bind(this);
   }
 
   get activeViewComponent() {
-    const { viewName } = this.state;
-
-    switch (viewName) {
+    switch (MainStore.currentViewName) {
       case 'list':
         return (
-          <LaunchesList
-            onLaunchClick={this.handleLaunchClick}
-          />
+          <LaunchesList />
         );
 
       case 'details':
@@ -40,7 +36,6 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
             launch={launch}
             launchSite={launchSite}
             rocket={rocket}
-            onBackClick={this.handleBackClick}
           />
         );
 
@@ -48,19 +43,14 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
     }
   }
 
-  handleLaunchClick() {
-    this.setState({ viewName: 'details' });
-  }
-
-  handleBackClick() {
-    this.setState({ viewName: 'list' });
-  }
-
   render() {
     return (
       <main>
-        {this.activeViewComponent}
-        <Footer /> 
+        <Provider mainStore={MainStore}>
+          {this.activeViewComponent}
+        </Provider>
+        <Footer />
+        <DevTools />
       </main>
     );
   }

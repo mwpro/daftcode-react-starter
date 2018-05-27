@@ -2,6 +2,8 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 
 class Counter extends React.Component {
+    // I have let myself leave this component withot mobx
+    // I think it will clutter the Store with non-business data about counting time
     constructor(props) {
         super();
 
