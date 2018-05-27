@@ -11,11 +11,9 @@ class Loader extends React.Component {
     }
 
     render() {        
-        const { mainStore } = this.props;
-
         return (
             <div className="loader">
-                { mainStore.launchesList.isLoading && <div className="loaderElement"></div> }
+                { this.props.mainStore.launchesList.isLoading && <div className="loaderElement"></div> }
             </div>
         );
     }

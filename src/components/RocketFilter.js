@@ -17,18 +17,17 @@ class RocketFilter extends React.Component {
 
     @action.bound
     handleRocketSelect(rocketName) {
-        const { mainStore } = this.props;
-        mainStore.setFilter(rocketName);
+        this.props.mainStore.setFilter(rocketName);
     }
 
     render() {
-        const { mainStore } = this.props;
+        const { launchesList, rocketNames } = this.props.mainStore;
         
         return (
             <div className="filters">
-                <button className={mainStore.launchesList.rocketFilter === null ? 'active' : ''} onClick={this.handleRocketSelect.bind(null, null)}>All rockets</button>
-                {Array.from(mainStore.rocketNames).map((rocketName) => 
-                    <button key={rocketName} className={mainStore.launchesList.rocketFilter === rocketName ? 'active' : ''} onClick={this.handleRocketSelect.bind(null, rocketName)}>{rocketName}</button>
+                <button className={launchesList.rocketFilter === null ? 'active' : ''} onClick={this.handleRocketSelect.bind(null, null)}>All rockets</button>
+                {Array.from(rocketNames).map((rocketName) => 
+                    <button key={rocketName} className={launchesList.rocketFilter === rocketName ? 'active' : ''} onClick={this.handleRocketSelect.bind(null, rocketName)}>{rocketName}</button>
                 )}                
             </div>
         );

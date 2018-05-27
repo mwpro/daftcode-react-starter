@@ -1,10 +1,6 @@
 import { hot } from 'react-hot-loader';
 import * as React from 'react';
 
-import launch from './assets/launch.json';
-import launchSite from './assets/launch_site.json';
-import rocket from './assets/rocket.json';
-
 import { Provider, observer } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 
@@ -32,11 +28,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
 
       case 'details':
         return (
-          <LaunchDetails
-            launch={launch}
-            launchSite={launchSite}
-            rocket={rocket}
-          />
+          <LaunchDetails />
         );
 
       default: return null;

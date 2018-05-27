@@ -7,18 +7,18 @@ import LaunchSite from '../components/LaunchSite'
 import Counter from '../components/Counter'
 
 import { action } from 'mobx';
-import { inject } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 
 @inject('mainStore')
+@observer
 class LaunchDetails extends React.Component {    
     @action.bound
     handleGoBack() {
-        const { mainStore } = this.props;
-        mainStore.switchView("list");
+        this.props.mainStore.switchView("list");
     }
 
     render() {
-        const { mainStore } = this.props;
+        const { launch } = this.props.mainStore.launchDetails;
         
         return (
             <div className="launchDetails">
@@ -28,25 +28,25 @@ class LaunchDetails extends React.Component {
                 </header>
                 <div className="launchDetailsDetails">
                     <div className="basics">
-                        <p className="launchDate">{format(this.props.launch.launch_date_utc, 'DD MMMM YYYY')}</p>
-                        <h1>{this.props.launch.rocket.second_stage.payloads[0].payload_id} launch</h1>
-                        <Counter className="timeLeft" to={this.props.launch.launch_date_unix} />
-                        <img src={this.props.launch.links.mission_patch_small} />
+                        <p className="launchDate">{format(launch.launch_date_utc, 'DD MMMM YYYY')}</p>
+                        <h1>{launch.rocket.second_stage.payloads[0].payload_id} launch</h1>
+                        <Counter className="timeLeft" to={launch.launch_date_unix} />
+                        <img src={launch.links.mission_patch_small} />
                     </div>
                     <div className="details">
                         <div>
                         <h3>Details</h3>
-                        <p>{this.props.launch.details}</p>
+                        <p>{launch.details}</p>
                         </div>
-                        <Rocket rocket={this.props.rocket} />
-                        <LaunchSite launchSite={this.props.launchSite} />
+                        <Rocket />
+                        <LaunchSite />
                     </div>                    
                 </div>
                 <div className="links">
                     <h3>Mission links</h3>
-                    <a href={this.props.launch.links.reddit_campaign}>Reddit Campaign</a>
-                    <a href={this.props.launch.links.presskit}>Presskit</a>
-                    <a href={this.props.launch.links.video_link}>Mission video</a>
+                    <a href={launch.links.reddit_campaign}>Reddit Campaign</a>
+                    <a href={launch.links.presskit}>Presskit</a>
+                    <a href={launch.links.video_link}>Mission video</a>
                 </div>
             </div>
         );

@@ -1,5 +1,9 @@
 import { observable, action, autorun, computed, runInAction } from 'mobx';
 
+import launch from '../assets/launch.json';
+import launchSite from '../assets/launch_site.json';
+import rocket from '../assets/rocket.json';
+
 class MainStore {
     @observable currentViewName = 'list';  // 'list' / 'details'
 
@@ -10,6 +14,12 @@ class MainStore {
         isLoading: true,
         isFailed: false,
         lauchesData: [],
+    }
+
+    @observable launchDetails = {
+        launch: launch,
+        launchSite: launchSite,
+        rocket: rocket
     }
 
     @computed
@@ -35,7 +45,6 @@ class MainStore {
 
     @action
     switchView(viewName){
-        console.log(viewName);
         this.currentViewName = viewName;
     }
 
