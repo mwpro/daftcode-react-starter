@@ -38,8 +38,6 @@ main
 .loaderElement
   text-align: center
   height: 70px
-  margin-top: 50px
-  margin-bottom: 100px
   color: $desert-color
   background: url("../assets/space_x_logo_x_sign.png") no-repeat center top
   background-size: contain
@@ -60,6 +58,10 @@ main
   overflow: hidden
   display: flex
   flex-direction: column
+
+  .loaderElement
+    margin-top: 50px
+    margin-bottom: 100px
 
   header 
     background: url("../assets/moon.png") no-repeat center top
@@ -224,6 +226,14 @@ main
       flex: 1
       padding-bottom: 50px
     
+    .launchTableDetails
+      div
+        padding-bottom: 0px
+      
+      .loaderElement
+        background: url("../assets/space_x_logo_x_sign_inverse.png") white no-repeat center top
+        background-size: contain
+
     ul
       text-transform: uppercase
       list-style: none

@@ -6,11 +6,10 @@ import { action } from 'mobx';
 import { observer, inject } from 'mobx-react';
 
 @inject('mainStore')
-@observer
 class LaunchListItem extends React.Component {
     @action.bound
     handleLaunchSelect() {
-        this.props.mainStore.switchView("details");
+        this.props.mainStore.openDetails(this.props.launch);
     }
 
     render() {

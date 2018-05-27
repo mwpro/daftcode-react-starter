@@ -2,29 +2,36 @@ import * as React from 'react';
 
 import { format } from 'date-fns'
 
+import Loader from "../components/Loader";
+
 import { observer, inject } from 'mobx-react';
 
 @inject('mainStore')
 @observer
 class Rocket extends React.Component {
     render() {
-        const { rocket } = this.props.mainStore.launchDetails;
+        const { mainStore } = this.props;
+        const { rocket } = mainStore;
 
         return (
-            <div>
+            <div className="launchTableDetails">
                 <h3>Rocket</h3>
-                <ul>
-                    <li><span>Name:</span>{rocket.name}</li>
-                    <li><span>Company:</span>{rocket.company}</li>
-                    <li><span>Height:</span>{rocket.height.meters}M / {rocket.height.feet}FT</li>
-                    <li><span>Diameter:</span>{rocket.diameter.meters}M / {rocket.diameter.feet}FT</li>
-                    <li><span>Mass:</span>{rocket.mass.kg}KG / {rocket.mass.lb}LB</li>
-                    <li><span>First flight:</span>{format(rocket.first_flight, 'DD MMMM YYYY')}</li>
-                    <li><span>Country:</span>{rocket.country}</li>
-                    <li><span>Success rate:</span>{rocket.success_rate_pct}%</li>
-                    <li><span>Cost per launch:</span>${rocket.cost_per_launch}</li>
-                </ul>
-                <p>{rocket.description}</p>
+                {mainStore.isRocketAvailable && <div>
+                    <ul>
+                        <li><span>Name:</span>{rocket.rocketData.name}</li>
+                        <li><span>Company:</span>{rocket.rocketData.company}</li>
+                        <li><span>Height:</span>{rocket.rocketData.height.meters}M / {rocket.rocketData.height.feet}FT</li>
+                        <li><span>Diameter:</span>{rocket.rocketData.diameter.meters}M / {rocket.rocketData.diameter.feet}FT</li>
+                        <li><span>Mass:</span>{rocket.rocketData.mass.kg}KG / {rocket.rocketData.mass.lb}LB</li>
+                        <li><span>First flight:</span>{format(rocket.rocketData.first_flight, 'DD MMMM YYYY')}</li>
+                        <li><span>Country:</span>{rocket.rocketData.country}</li>
+                        <li><span>Success rate:</span>{rocket.rocketData.success_rate_pct}%</li>
+                        <li><span>Cost per launch:</span>${rocket.rocketData.cost_per_launch}</li>
+                    </ul>
+                    <p>{rocket.rocketData.description}</p>
+                </div>}
+                <Loader isLoading={rocket.isLoading} />
+                {mainStore.isRocketFetchFailed && <div className="alert"><h2>🚀<br />Sorry, problem while loading rocket details. Try again later.</h2></div>}
             </div>
         );
     }

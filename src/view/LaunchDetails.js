@@ -18,7 +18,7 @@ class LaunchDetails extends React.Component {
     }
 
     render() {
-        const { launch } = this.props.mainStore.launchDetails;
+        const { launch } = this.props.mainStore;
         
         return (
             <div className="launchDetails">

@@ -7,11 +7,10 @@ import DevTools from 'mobx-react-devtools';
 import './styles/theme.sass';
 
 import LaunchDetails from './view/LaunchDetails';
+import LaunchesList from './view/LaunchesList';
 import Footer from './view/Footer';
 
 import MainStore from './stores/MainStore';
-
-import LaunchesList from './view/LaunchesList';
 
 @observer
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function

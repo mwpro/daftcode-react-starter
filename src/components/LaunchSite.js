@@ -1,21 +1,28 @@
 import * as React from 'react';
 
+import Loader from "../components/Loader";
+
 import { observer, inject } from 'mobx-react';
 
 @inject('mainStore')
 @observer
 class LaunchSite extends React.Component {
     render() {        
-        const { launchSite } = this.props.mainStore.launchDetails;
+        const { mainStore } = this.props;
+        const { site } = mainStore;
 
         return (
-            <div>
+            <div className="launchTableDetails">
                 <h3>Launch Pad</h3>
-                <ul>
-                    <li><span>Name:</span> {launchSite.full_name}</li>
-                    <li><span>Location:</span> {launchSite.location.name}, {launchSite.location.region}</li>
-                </ul>
-                <p>{launchSite.details}</p>                
+                {mainStore.isSiteAvailable && <div>
+                    <ul>
+                        <li><span>Name:</span> {site.siteData.full_name}</li>
+                        <li><span>Location:</span> {site.siteData.location.name}, {site.siteData.location.region}</li>
+                    </ul>
+                    <p>{site.siteData.details}</p> 
+                </div>}
+                <Loader isLoading={site.isLoading} />               
+                {mainStore.isSiteFetchFailed && <div className="alert"><h2>🚀<br />Sorry, problem while loading site details. Try again later.</h2></div>}
             </div>
         );
     }

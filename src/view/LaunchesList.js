@@ -29,9 +29,8 @@ class LaunchesList extends React.Component {
                     <h1>Launches 2018</h1>
                 </header>
                 <RocketFilter />                
-                <Loader />
+                <Loader isLoading={this.props.mainStore.launchesList.isLoading} />
 
-                {mainStore.areLaunchesEmpty && <div className="alert"><h2>🚀<br />Sorry, no launches found</h2></div>}
                 {mainStore.areLaunchesAvailable &&
                     <ul>
                         {mainStore.launchesList.lauchesData.map((launch) =>
@@ -39,8 +38,8 @@ class LaunchesList extends React.Component {
                         )}
                     </ul>
                 }
-                       
-                {mainStore.isFetchFailed && <div className="alert"><h2>🚀<br />Sorry, problem while loading launches. Try again later.</h2></div>}
+                {mainStore.areLaunchesEmpty && <div className="alert"><h2>🚀<br />Sorry, no launches found</h2></div>}                       
+                {mainStore.isLaunchesFetchFailed && <div className="alert"><h2>🚀<br />Sorry, problem while loading launches. Try again later.</h2></div>}
 
             </div>
         );
